@@ -1,0 +1,18 @@
+.pages{
+    text-align: center;
+}
+.pages a{
+    color: black;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: inline-block;
+}
+.pages a.active{
+    background-color: aquamarine;
+    font-weight: bold;
+    border-radius: 1px;
+}
+.pages a:hover:not(.active){
+    background-color: darkgrey;
+    border-radius: 3px;
+}
