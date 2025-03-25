@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: hsl(0, 0%, 95%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 20px;
+        }
+        
+        .converter {
+            background-color: hsl(0, 0%, 100%);
+            text-align: center;
+            max-width: 350px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 15px hsla(0, 0%, 0%, 0.767);
+            padding: 20px;
+        }
+        
+        h1 {
+            color: hsl(223, 100%, 64%);
+        }
+        
+        input {
+            width: 80%;
+            text-align: center;
+            font-size: 1.5em;
+            border: 2px solid hsla(0, 0%, 0%, 0.8);
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        
+        button {
+            width: 80%;
+            text-align: center;
+            font-size: 1.5em;
+            border: 2px solid hsla(0, 0%, 0%, 0.8);
+            border-radius: 4px;
+            margin-bottom: 15px;
+            background-color: rgb(0, 255, 221);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="converter" id="converterForm">
+        <h1>Currency Converter</h1>
+        <input type="text" id="rate" placeholder="Today's Rate" required>
+        <button type="button" onclick="displayRate()">Enter Rate</button>
+        <p id="ratep" class="hidden">Today's Rate: <span id="displayRate"></span></p>
+
+        <br>
+
+        <input type="text" id="value" placeholder="Value to Convert" required>
+        <button type="button" onclick="convert()">Convert</button>
+
+        <h1>Your value is:
+            <p id="result">0</p>
+        </h1>
+    </div>
+
+    <div class="converter" id="reverseConverterForm">
+        <h1>Convert Back</h1>
+        <input type="text" id="convertedValue" placeholder="Converted Value" required>
+        <input type="text" id="reverseRate" placeholder="Today's Rate" required>
+        <button type="button" onclick="convertBack()">Convert Back</button>
+
+        <h1>Original value is:
+            <p id="reverseResult">0</p>
+        </h1>
+    </div>
+
+    <script>
+        let rateResult = 0;
+
+        function displayRate() {
+            const rateValue = parseFloat(document.getElementById("rate").value);
+            if (!isNaN(rateValue)) {
+                rateResult = rateValue;
+                document.getElementById("displayRate").innerText = rateResult;
+                document.getElementById("ratep").classList.remove("hidden");
+                document.getElementById("rate").value = ''; // Clear the input
+            } else {
+                alert("Please enter a valid rate.");
+            }
+        }
+
+        function convert() {
+            const inputValue = parseFloat(document.getElementById("value").value);
+            if (!isNaN(inputValue) && rateResult > 0) {
+                const convertedValue = inputValue * rateResult;
+                document.getElementById("result").innerText = convertedValue.toFixed(2);
+            } else {
+                alert("Please enter a valid value and ensure the rate is set.");
+            }
+        }
+
+        function convertBack() {
+            const convertedValue = parseFloat(document.getElementById("convertedValue").value);
+            const reverseRate = parseFloat(document.getElementById("reverseRate").value);
+            if (!isNaN(convertedValue) && !isNaN(reverseRate) && reverseRate > 0) {
+                const originalValue = convertedValue / reverseRate;
+                document.getElementById("reverseResult").innerText = originalValue.toFixed(2);
+            } else {
+                alert("Please enter valid values for converted amount and rate.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
