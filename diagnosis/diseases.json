@@ -1,0 +1,81 @@
+{
+    "diseases": [
+      {
+        "name": "Flu",
+        "symptoms": [
+          "fever",
+          "cough",
+          "sore throat",
+          "fatigue",
+          "headache"
+        ],
+        "causes": [
+          "viral infection",
+          "influenza virus"
+        ],
+        "medications": [
+          "antiviral medications",
+          "rest",
+          "fluids"
+        ]
+      },
+      {
+        "name": "Cold",
+        "symptoms": [
+          "cough",
+          "sore throat",
+          "runny nose",
+          "sneezing",
+          "fatigue"
+        ],
+        "causes": [
+          "viral infection",
+          "rhinovirus"
+        ],
+        "medications": [
+          "over-the-counter cold medications",
+          "rest",
+          "fluids"
+        ]
+      },
+      {
+        "name": "Pneumonia",
+        "symptoms": [
+          "fever",
+          "cough",
+          "shortness of breath",
+          "chest pain"
+        ],
+        "causes": [
+          "bacterial infection",
+          "viral infection",
+          "fungal infection"
+        ],
+        "medications": [
+          "antibiotics",
+          "antiviral medications",
+          "oxygen therapy"
+        ]
+      },
+      {
+        "name": "Diabetes",
+        "symptoms": [
+          "frequent urination",
+          "excessive thirst",
+          "fatigue",
+          "blurred vision"
+        ],
+        "causes": [
+          "genetic factors",
+          "lifestyle factors",
+          "insulin resistance"
+        ],
+        "medications": [
+          "insulin",
+          "oral hypoglycemics",
+          "lifestyle changes"
+        ]
+      }
+    ]
+  }
+  
